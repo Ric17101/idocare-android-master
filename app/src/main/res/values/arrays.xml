@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="nav_drawer_entry_my">Assigned to me</string>
+    <string name="nav_drawer_entry_new_request">New request</string>
+    <string name="nav_drawer_entry_map">Map</string>
+    <string name="nav_drawer_entry_requests_list">Requests list</string>
+    <string name="nav_drawer_entry_logout">Log out</string>
+    <string name="nav_drawer_entry_login">Log in</string>
+
+
+    <!-- Nav Drawer List Item Icons -->
+    <!-- Keep them in order as the titles are in -->
+</resources>

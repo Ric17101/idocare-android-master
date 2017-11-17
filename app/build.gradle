@@ -1,0 +1,67 @@
+apply plugin: 'com.android.application'
+//apply plugin: 'android-apt'
+
+android {
+
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+
+    defaultConfig {
+        applicationId "il.co.idocare"
+        minSdkVersion 17
+        targetSdkVersion 26
+        versionCode 9
+        versionName "0.7.4"
+
+        buildConfigField "int", "DATABASE_SCHEMA_VERSION", "4"
+    }
+
+    buildTypes {
+
+        debug {
+            buildConfigField "String", "ROOT_URL", "\"http://dev-04.idocare.co.il/api-04/\""
+            return true
+        }
+
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            buildConfigField "String", "ROOT_URL", "\"https://idocare.co.il/api-04/\""
+            return true
+        }
+
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    implementation'org.greenrobot:eventbus:3.0.0'
+    implementation'com.facebook.android:facebook-android-sdk:4.1.0'
+    implementation'com.google.android.gms:play-services-location:11.6.0'
+    implementation'com.google.android.gms:play-services-maps:11.6.0'
+    implementation'com.android.support:appcompat-v7:26.1.0'
+    implementation'com.android.support:design:26.1.0'
+    implementation'com.makeramen:roundedimageview:2.2.1'
+    implementation'uk.co.chrisjenx:calligraphy:2.2.0'
+    // JSON
+    implementation'com.google.code.gson:gson:2.8.0'
+    // Networking
+    implementation'com.squareup.retrofit2:retrofit:2.1.0'
+    implementation'com.squareup.retrofit2:converter-gson:2.1.0'
+    implementation'com.squareup.okhttp3:okhttp:3.7.0'
+    // Dependency injection
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.0'
+    implementation'com.google.dagger:dagger:2.0'
+    provided 'javax.annotation:jsr250-api:1.0'
+    // Testing
+    testImplementation'junit:junit:4.12'
+    testImplementation'org.mockito:mockito-core:1.10.19'
+    // Crash report
+    implementation'com.google.firebase:firebase-crash:11.6.0'
+    // Datetime library
+    implementation'joda-time:joda-time:2.9.4'
+}
+
+//apply plugin: 'com.google.gms.google-services'

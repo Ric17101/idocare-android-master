@@ -1,0 +1,42 @@
+
+
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- The main content view -->
+    <!--
+    Setting clickable to true in order to resolve bug with Navigation Drawer:
+    http://stackoverflow.com/questions/18044277/android-navigation-drawer-bug-using-the-sample
+    -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true">
+
+
+        <include android:id="@+id/toolbar" layout="@layout/element_toolbar"/>
+
+        <FrameLayout
+            android:id="@+id/frame_contents"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:background="@color/background"/>
+
+    </LinearLayout>
+
+    <!-- The navigation drawer -->
+
+    <fragment
+        android:id="@+id/fragment_nav_drawer"
+        android:layout_width="@dimen/drawer_width"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:name="il.co.idocare.screens.navigationdrawer.fragments.NavigationDrawerFragment"/>
+
+
+</android.support.v4.widget.DrawerLayout>
